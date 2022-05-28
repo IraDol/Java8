@@ -31,6 +31,7 @@ class RadioTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     void maxCurrentStation() {
         Radio station = new Radio();
@@ -48,6 +49,7 @@ class RadioTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     void nextStation() {
         Radio station = new Radio();
@@ -57,6 +59,7 @@ class RadioTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     void nextStationNormal() {
         Radio station = new Radio();
@@ -76,6 +79,7 @@ class RadioTest {
         int expected = 9;
         assertEquals(expected, actual);
     }
+
     @Test
     void prevStationNormal() {
         Radio station = new Radio();
@@ -95,6 +99,7 @@ class RadioTest {
         int expected = 10;
         assertEquals(expected, actual);
     }
+
     @Test
     void increaseMinVolume() {
         Radio volume = new Radio();
@@ -104,6 +109,7 @@ class RadioTest {
         int expected = 1;
         assertEquals(expected, actual);
     }
+
     @Test
     void increaseVolume() {
         Radio volume = new Radio();
@@ -113,6 +119,7 @@ class RadioTest {
         int expected = 10;
         assertEquals(expected, actual);
     }
+
     @Test
     void increaseOverVolume() {
         Radio volume = new Radio();
@@ -122,6 +129,7 @@ class RadioTest {
         int expected = 1;
         assertEquals(expected, actual);
     }
+
     @Test
     void increaseBelowVolume() {
         Radio volume = new Radio();
@@ -141,6 +149,7 @@ class RadioTest {
         int expected = 8;
         assertEquals(expected, actual);
     }
+
     @Test
     void reduceMaxVolume() {
         Radio volume = new Radio();
@@ -150,6 +159,7 @@ class RadioTest {
         int expected = 9;
         assertEquals(expected, actual);
     }
+
     @Test
     void reduceMinVolume() {
         Radio volume = new Radio();
@@ -159,6 +169,7 @@ class RadioTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     void reduceOverVolume() {
         Radio volume = new Radio();
@@ -168,6 +179,7 @@ class RadioTest {
         int expected = 0;
         assertEquals(expected, actual);
     }
+
     @Test
     void reduceBelowVolume() {
         Radio volume = new Radio();
