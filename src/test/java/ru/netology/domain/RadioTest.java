@@ -5,15 +5,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-
     @Test
-    void setQuantityStations() {
-        Radio radio = new Radio();
-        radio.setQuantityStations(9);
-        int actual = radio.getQuantityStations();
-        int expected = 9;
+    void setNewAndStations() {
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(15);
+        int actual = radio.getCurrentStation();
+        int expected = 15;
         assertEquals(expected, actual);
     }
+
     @Test
     void setCurrentStation() {
         Radio station = new Radio();
@@ -26,7 +26,7 @@ class RadioTest {
     @Test
     void overCurrentStation() {
         Radio station = new Radio();
-        station.setCurrentStation(10);
+        station.setCurrentStation(station.getQuantityStations() + 1);
         int actual = station.getCurrentStation();
         int expected = 0;
         assertEquals(expected, actual);
@@ -44,9 +44,9 @@ class RadioTest {
     @Test
     void maxCurrentStation() {
         Radio station = new Radio();
-        station.setCurrentStation(9);
+        station.setCurrentStation(station.getMaxStation());
         int actual = station.getCurrentStation();
-        int expected = 9;
+        int expected = station.getMaxStation();
         assertEquals(expected, actual);
     }
 
@@ -62,17 +62,17 @@ class RadioTest {
     @Test
     void nextStation() {
         Radio station = new Radio();
-        station.setCurrentStation(8);
+        station.setCurrentStation(7);
         station.nextStation();
         int actual = station.getCurrentStation();
-        int expected = 9;
+        int expected = 8;
         assertEquals(expected, actual);
     }
 
     @Test
     void nextStationNormal() {
         Radio station = new Radio();
-        station.setCurrentStation(9);
+        station.setCurrentStation(10);
         station.nextStation();
         int actual = station.getCurrentStation();
         int expected = 0;
@@ -82,20 +82,20 @@ class RadioTest {
     @Test
     void prevStation() {
         Radio station = new Radio();
-        station.setCurrentStation(0);
+        station.setCurrentStation(9);
         station.prevStation();
         int actual = station.getCurrentStation();
-        int expected = 9;
+        int expected = 8;
         assertEquals(expected, actual);
     }
 
     @Test
     void prevStationNormal() {
         Radio station = new Radio();
-        station.setCurrentStation(7);
+        station.setCurrentStation(0);
         station.prevStation();
         int actual = station.getCurrentStation();
-        int expected = 6;
+        int expected = 10;
         assertEquals(expected, actual);
     }
 
