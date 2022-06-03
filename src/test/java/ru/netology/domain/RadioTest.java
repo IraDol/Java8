@@ -62,17 +62,17 @@ class RadioTest {
     @Test
     void nextStation() {
         Radio station = new Radio();
-        station.setCurrentStation(7);
+        station.setCurrentStation(8);
         station.nextStation();
         int actual = station.getCurrentStation();
-        int expected = 8;
+        int expected = 9;
         assertEquals(expected, actual);
     }
 
     @Test
     void nextStationNormal() {
         Radio station = new Radio();
-        station.setCurrentStation(10);
+        station.setCurrentStation(9);
         station.nextStation();
         int actual = station.getCurrentStation();
         int expected = 0;
@@ -88,6 +88,15 @@ class RadioTest {
         int expected = 8;
         assertEquals(expected, actual);
     }
+    @Test
+    void prevStationTest() {
+        Radio station = new Radio(20);
+        station.setCurrentStation(0);
+        station.prevStation();
+        int actual = station.getCurrentStation();
+        int expected = 19;
+        assertEquals(expected, actual);
+    }
 
     @Test
     void prevStationNormal() {
@@ -95,7 +104,7 @@ class RadioTest {
         station.setCurrentStation(0);
         station.prevStation();
         int actual = station.getCurrentStation();
-        int expected = 10;
+        int expected = 9;
         assertEquals(expected, actual);
     }
 
